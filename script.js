@@ -4,9 +4,9 @@ var backgrounds = [
 '',
 '',
 '',
-'/Users/news/Desktop/Data Hub Segments/0409 China Tariffs/imports.png',
-'/Users/news/Desktop/Data Hub Segments/0409 China Tariffs/comparison.png',
-'/Users/news/Desktop/Data Hub Segments/0409 China Tariffs/countries.png',
+'imports.png',
+'comparison.png',
+'countries.png',
 '',
 '/Users/news/Desktop/Data Hub Segments/0409 China Tariffs/gdp.png',
 '/Users/news/Desktop/Data Hub Segments/0409 China Tariffs/growth.png'];
