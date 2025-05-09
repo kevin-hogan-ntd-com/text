@@ -243,7 +243,6 @@
             var active = mediaElements[index];
             active.style.display = 'block';
             document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
-            active.querySelectorAll('iframe').forEach(iframe => { var src = iframe.src; iframe.src = ''; iframe.src = src; });
             var vid2 = active.querySelector('video');
             if (vid2) vid2.play();
         }
