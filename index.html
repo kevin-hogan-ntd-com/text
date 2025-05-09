@@ -436,7 +436,44 @@
 
         canvasEl.addEventListener('touchend', e => {
             if (!canvasEl.classList.contains('active-drawing')) return;
-            if (isPenDrawing) isPenDrawing = false;
+            const touch = e.changedTouches[0];
+            const rect = canvasEl.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            if (currentTool === 'pen') {
+                if (!isPenDrawing) return;
+                isPenDrawing = false;
+                if (penInitialX === x && penInitialY === y) {
+                    ctx.fillStyle = strokeColor;
+                    ctx.beginPath();
+                    ctx.arc(penInitialX, penInitialY, lineWidth/2, 0, 2*Math.PI);
+                    ctx.fill();
+                } else {
+                    ctx.lineTo(x, y); ctx.stroke();
+                }
+            } else if (currentTool === 'line') {
+                ctx.beginPath(); ctx.moveTo(shapeStartX, shapeStartY);
+                ctx.lineTo(x, y); ctx.stroke();
+            } else if (currentTool === 'arrow') {
+                drawArrow(shapeStartX, shapeStartY, x, y);
+            } else if (currentTool === 'rectangle') {
+                ctx.beginPath(); ctx.rect(shapeStartX, shapeStartY, x-shapeStartX, y-shapeStartY); ctx.stroke();
+            } else if (currentTool === 'circle') {
+                const rectX = Math.min(shapeStartX, x);
+                const rectY = Math.min(shapeStartY, y);
+                const width = Math.abs(x - shapeStartX);
+                const height = Math.abs(y - shapeStartY);
+                const centerX = rectX + width / 2;
+                const centerY = rectY + height / 2;
+                const radius = Math.min(width, height) / 2;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
         });
 
 
