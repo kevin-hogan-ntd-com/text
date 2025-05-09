@@ -396,6 +396,50 @@
             if (isPenDrawing) isPenDrawing = false;
         });
 
+        // Touch support for telestration
+        canvasEl.addEventListener('touchstart', e => {
+            if (!canvasEl.classList.contains('active-drawing')) return;
+            const touch = e.touches[0];
+            const rect = canvasEl.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            if (currentTool === 'pen') {
+                isPenDrawing = true;
+                penInitialX = penLastX = x;
+                penInitialY = penLastY = y;
+                ctx.beginPath(); ctx.moveTo(penLastX, penLastY);
+            } else {
+                shapeStartX = x; shapeStartY = y;
+            }
+        });
+
+        canvasEl.addEventListener('touchmove', e => {
+            if (!canvasEl.classList.contains('active-drawing')) return;
+            e.preventDefault(); // Prevent scrolling while drawing
+            const touch = e.touches[0];
+            const rect = canvasEl.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            if (currentTool === 'pen' && isPenDrawing) {
+                const midX = (penLastX + x) / 2;
+                const midY = (penLastY + y) / 2;
+                ctx.quadraticCurveTo(penLastX, penLastY, midX, midY);
+                ctx.strokeStyle = strokeColor;
+                ctx.lineWidth = lineWidth;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.stroke();
+                penLastX = x; penLastY = y;
+                ctx.beginPath(); ctx.moveTo(midX, midY);
+            }
+        }, { passive: false });
+
+        canvasEl.addEventListener('touchend', e => {
+            if (!canvasEl.classList.contains('active-drawing')) return;
+            if (isPenDrawing) isPenDrawing = false;
+        });
+
+
         function drawArrow(fromX, fromY, toX, toY) {
             const headlen = 10 + lineWidth*2;
             const dx = toX - fromX, dy = toY - fromY;
