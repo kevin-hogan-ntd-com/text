@@ -5,8 +5,150 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Presentation App</title>
 <link href="icons/favicon.png" rel="icon" type="image/x-icon"/>
-<script src="https://public.flourish.studio/resources/embed.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+<script src="https://public.flourish.studio/resources/embed.js">
+// Enable touch support for canvas drawing and shapes
+canvas.on('touch:gesture', function() {});
+canvas.on('touch:drag', function() {});
+canvas.on('touch:orientation', function() {});
+canvas.on('touch:shake', function() {});
+canvas.on('touch:longpress', function() {});
+
+// Custom touch support for shape drawing
+canvas.on('touch:down', function(options) {
+    if (!currentShape) return;
+    const p = canvas.getPointer(options.e);
+    startX = p.x;
+    startY = p.y;
+});
+canvas.on('touch:up', function(options) {
+    if (!currentShape || startX === null) { startX = startY = null; return; }
+    const p = canvas.getPointer(options.e);
+    const endX = p.x, endY = p.y;
+    const color = currentColor;
+    const width = currentWidth;
+    let obj;
+
+    switch (currentShape) {
+        case 'line':
+            obj = new fabric.Line([startX, startY, endX, endY], {
+                selectable: false,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'arrow':
+            drawArrow(startX, startY, endX, endY, color, width);
+            break;
+        case 'rect':
+            const rx = Math.min(startX, endX);
+            const ry = Math.min(startY, endY);
+            const rw = Math.abs(endX - startX);
+            const rh = Math.abs(endY - startY);
+            obj = new fabric.Rect({
+                fill: 'transparent',
+                selectable: false,
+                left: rx,
+                top: ry,
+                width: rw,
+                height: rh,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'circle':
+            const cx = (startX + endX)/2;
+            const cy = (startY + endY)/2;
+            const r = Math.sqrt(Math.pow(endX - startX,2) + Math.pow(endY - startY,2)) / 2;
+            obj = new fabric.Circle({
+                fill: 'transparent',
+                selectable: false,
+                left: cx - r,
+                top: cy - r,
+                radius: r,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+    }
+    startX = startY = null;
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js">
+// Enable touch support for canvas drawing and shapes
+canvas.on('touch:gesture', function() {});
+canvas.on('touch:drag', function() {});
+canvas.on('touch:orientation', function() {});
+canvas.on('touch:shake', function() {});
+canvas.on('touch:longpress', function() {});
+
+// Custom touch support for shape drawing
+canvas.on('touch:down', function(options) {
+    if (!currentShape) return;
+    const p = canvas.getPointer(options.e);
+    startX = p.x;
+    startY = p.y;
+});
+canvas.on('touch:up', function(options) {
+    if (!currentShape || startX === null) { startX = startY = null; return; }
+    const p = canvas.getPointer(options.e);
+    const endX = p.x, endY = p.y;
+    const color = currentColor;
+    const width = currentWidth;
+    let obj;
+
+    switch (currentShape) {
+        case 'line':
+            obj = new fabric.Line([startX, startY, endX, endY], {
+                selectable: false,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'arrow':
+            drawArrow(startX, startY, endX, endY, color, width);
+            break;
+        case 'rect':
+            const rx = Math.min(startX, endX);
+            const ry = Math.min(startY, endY);
+            const rw = Math.abs(endX - startX);
+            const rh = Math.abs(endY - startY);
+            obj = new fabric.Rect({
+                fill: 'transparent',
+                selectable: false,
+                left: rx,
+                top: ry,
+                width: rw,
+                height: rh,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'circle':
+            const cx = (startX + endX)/2;
+            const cy = (startY + endY)/2;
+            const r = Math.sqrt(Math.pow(endX - startX,2) + Math.pow(endY - startY,2)) / 2;
+            obj = new fabric.Circle({
+                fill: 'transparent',
+                selectable: false,
+                left: cx - r,
+                top: cy - r,
+                radius: r,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+    }
+    startX = startY = null;
+});
+
+</script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
 <style>
 canvas {
@@ -604,7 +746,78 @@ canvas {
                 cursorBtn.click();
             });
             
-        </script>
+        
+// Enable touch support for canvas drawing and shapes
+canvas.on('touch:gesture', function() {});
+canvas.on('touch:drag', function() {});
+canvas.on('touch:orientation', function() {});
+canvas.on('touch:shake', function() {});
+canvas.on('touch:longpress', function() {});
+
+// Custom touch support for shape drawing
+canvas.on('touch:down', function(options) {
+    if (!currentShape) return;
+    const p = canvas.getPointer(options.e);
+    startX = p.x;
+    startY = p.y;
+});
+canvas.on('touch:up', function(options) {
+    if (!currentShape || startX === null) { startX = startY = null; return; }
+    const p = canvas.getPointer(options.e);
+    const endX = p.x, endY = p.y;
+    const color = currentColor;
+    const width = currentWidth;
+    let obj;
+
+    switch (currentShape) {
+        case 'line':
+            obj = new fabric.Line([startX, startY, endX, endY], {
+                selectable: false,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'arrow':
+            drawArrow(startX, startY, endX, endY, color, width);
+            break;
+        case 'rect':
+            const rx = Math.min(startX, endX);
+            const ry = Math.min(startY, endY);
+            const rw = Math.abs(endX - startX);
+            const rh = Math.abs(endY - startY);
+            obj = new fabric.Rect({
+                fill: 'transparent',
+                selectable: false,
+                left: rx,
+                top: ry,
+                width: rw,
+                height: rh,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+        case 'circle':
+            const cx = (startX + endX)/2;
+            const cy = (startY + endY)/2;
+            const r = Math.sqrt(Math.pow(endX - startX,2) + Math.pow(endY - startY,2)) / 2;
+            obj = new fabric.Circle({
+                fill: 'transparent',
+                selectable: false,
+                left: cx - r,
+                top: cy - r,
+                radius: r,
+                stroke: color,
+                strokeWidth: width
+            });
+            canvas.add(obj);
+            break;
+    }
+    startX = startY = null;
+});
+
+</script>
     </div>
 </body>
 </html>
