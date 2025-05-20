@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -303,44 +304,44 @@ canvas {
 </style>
 </head>
 <body>
-    <div class="container"><div class="media video-container" id="video1" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/topslide.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="media video-container" id="video2" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/yield.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="media chart" id="flourish3" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276491"></div></div>
-        <div class="media chart" id="flourish4" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23234376"></div></div>
-        <div class="media chart" id="flourish5" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276552"></div></div>
-        <div class="media chart" id="flourish6" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276625"></div></div>
-        <div class="media video-container" id="video7" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="media video-container" id="video8" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="media video-container" id="video9" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/dip.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="media video-container" id="video10" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/z_placeholder.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-        <div class="button-container">
-            <button id="nextBtn" onclick="changeMedia(1)">→</button>
-            <button id="backBtn" onclick="changeMedia(-1)">←</button>
-            <button id="startSvg1" onclick="startPlacingSvg('svg1')">1</button>
-            <button id="startSvg2" onclick="startPlacingSvg('svg2')">2</button>
-            <button id="stopSvg" onclick="stopPlacingSvg()">3</button>
-            <button id="clearSvg" onclick="clearSvgImages()">X</button>
-        </div>
-        <div class="toolbar">
-            <button class="active" id="cursorBtn" title="Cursor"><i class="fas fa-mouse-pointer"></i></button>
-            <button id="penBtn" title="Pen"><i class="fas fa-pencil-alt"></i></button>
-            <button class="colorBtn active" data-color="#FF0000" title="Red"><i class="fas fa-circle" style="color:rgba(255, 0, 0, 0.5);"></i></button>
-            <button class="colorBtn" data-color="#00FF00" title="Green"><i class="fas fa-circle" style="color:rgba(0, 255, 0, 0.5);"></i></button>
-            <button class="colorBtn" data-color="#0000FF" title="Blue"><i class="fas fa-circle" style="color:rgba(0, 0, 255, 0.5);"></i></button>
-            <button class="weightBtn active" data-weight="2"><div style="width:200px;height:2px;background:#c0c0c0;"></div></button>
-            <button class="weightBtn" data-weight="5"><div style="width:200px;height:5px;background:#c0c0c0;"></div></button>
-            <button class="weightBtn" data-weight="10"><div style="width:200px;height:10px;background:#c0c0c0;"></div></button>
-            <button class="shapeBtn" data-shape="line"><i class="fas fa-minus"></i></button>
-            <button class="shapeBtn" data-shape="arrow"><i class="fas fa-long-arrow-alt-right"></i></button>
-            <button class="shapeBtn" data-shape="rect"><i class="far fa-square"></i></button>
-            <button class="shapeBtn" data-shape="circle"><i class="far fa-circle"></i></button>
-            <button id="clear-canvas-btn" title="Clear"><i class="fas fa-trash"></i></button>
-        </div>
-        <canvas id="c"></canvas>
-        <div class="container">
-            <!-- your media/chart divs here -->
-        </div>
-        <script>
+<div class="container"><div class="media video-container" id="video1" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/topslide.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="media video-container" id="video2" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/yield.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="media chart" id="flourish3" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276491"></div></div>
+<div class="media chart" id="flourish4" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23234376"></div></div>
+<div class="media chart" id="flourish5" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276552"></div></div>
+<div class="media chart" id="flourish6" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276625"></div></div>
+<div class="media video-container" id="video7" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="media video-container" id="video8" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="media video-container" id="video9" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/dip.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="media video-container" id="video10" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/z_placeholder.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+<div class="button-container">
+<button id="nextBtn" onclick="changeMedia(1)">→</button>
+<button id="backBtn" onclick="changeMedia(-1)">←</button>
+<button id="startSvg1" onclick="startPlacingSvg('svg1')">1</button>
+<button id="startSvg2" onclick="startPlacingSvg('svg2')">2</button>
+<button id="stopSvg" onclick="stopPlacingSvg()">3</button>
+<button id="clearSvg" onclick="clearSvgImages()">X</button>
+</div>
+<div class="toolbar">
+<button class="active" id="cursorBtn" title="Cursor"><i class="fas fa-mouse-pointer"></i></button>
+<button id="penBtn" title="Pen"><i class="fas fa-pencil-alt"></i></button>
+<button class="colorBtn active" data-color="#FF0000" title="Red"><i class="fas fa-circle" style="color:rgba(255, 0, 0, 0.5);"></i></button>
+<button class="colorBtn" data-color="#00FF00" title="Green"><i class="fas fa-circle" style="color:rgba(0, 255, 0, 0.5);"></i></button>
+<button class="colorBtn" data-color="#0000FF" title="Blue"><i class="fas fa-circle" style="color:rgba(0, 0, 255, 0.5);"></i></button>
+<button class="weightBtn active" data-weight="2"><div style="width:200px;height:2px;background:#c0c0c0;"></div></button>
+<button class="weightBtn" data-weight="5"><div style="width:200px;height:5px;background:#c0c0c0;"></div></button>
+<button class="weightBtn" data-weight="10"><div style="width:200px;height:10px;background:#c0c0c0;"></div></button>
+<button class="shapeBtn" data-shape="line"><i class="fas fa-minus"></i></button>
+<button class="shapeBtn" data-shape="arrow"><i class="fas fa-long-arrow-alt-right"></i></button>
+<button class="shapeBtn" data-shape="rect"><i class="far fa-square"></i></button>
+<button class="shapeBtn" data-shape="circle"><i class="far fa-circle"></i></button>
+<button id="clear-canvas-btn" title="Clear"><i class="fas fa-trash"></i></button>
+</div>
+<canvas id="c"></canvas>
+<div class="container">
+<!-- your media/chart divs here -->
+</div>
+<script>
             function drawArrow(x1, y1, x2, y2, color, width) {
                 const angle = Math.atan2(y2 - y1, x2 - x1);
                 const headlen = 10 + width * 2;
@@ -622,9 +623,9 @@ canvas {
             let placingSvg = false;
             let currentSvg = null;
             const svgDetails = {
-                svg1: { path: 'media/SVG/strike.svg', width: '75px', height: '75px' },
-                svg2: { path: 'media/SVG/plant.svg', width: '75px', height: '75px' },
-                svg3: { path: 'media/SVG/outage.svg', width: '74px', height: '75px' }
+                svg1: { path: '/Users/news/Desktop/Data Hub Segments/svg/strike.svg', width: '75px', height: '75px' },
+                svg2: { path: '/Users/news/Desktop/Data Hub Segments/svg/plant.svg', width: '75px', height: '75px' },
+                svg3: { path: '/Users/news/Desktop/Data Hub Segments/svg/outage.svg', width: '74px', height: '75px' }
             };
             function startPlacingSvg(svgKey) {
                 currentShape = null;
@@ -817,7 +818,27 @@ canvas.on('touch:up', function(options) {
     startX = startY = null;
 });
 
+
+
+document.addEventListener('touchstart', function(event) {
+    if (placingSvg && currentSvg) {
+        const touch = event.touches[0];
+        const svgImage = document.createElement('img');
+        svgImage.src = currentSvg.path;
+        svgImage.className = 'placed-svg';
+        svgImage.style.position = 'fixed';
+        svgImage.style.width = currentSvg.width;
+        svgImage.style.height = currentSvg.height;
+        svgImage.style.left = (touch.pageX - parseInt(currentSvg.width)/2) + 'px';
+        svgImage.style.top = (touch.pageY - parseInt(currentSvg.height)/2) + 'px';
+        svgImage.style.pointerEvents = 'none';
+        svgImage.style.transform = 'none';
+        svgImage.style.objectFit = 'contain';
+        svgImage.style.zIndex = '100000';
+        document.body.appendChild(svgImage);
+    }
+}, { passive: true });
 </script>
-    </div>
+</div>
 </body>
 </html>
