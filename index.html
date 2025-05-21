@@ -304,16 +304,13 @@ canvas {
 </style>
 </head>
 <body>
-<div class="container"><div class="media video-container" id="video1" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/topslide.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-<div class="media video-container" id="video2" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/yield.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-<div class="media chart" id="flourish3" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276491"></div></div>
-<div class="media chart" id="flourish4" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23234376"></div></div>
-<div class="media chart" id="flourish5" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276552"></div></div>
-<div class="media chart" id="flourish6" style="display:none;"><div class="flourish-embed flourish-chart" data-src="visualisation/23276625"></div></div>
-<div class="media video-container" id="video7" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-<div class="media video-container" id="video8" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/bonds2.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-<div class="media video-container" id="video9" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/dip.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
-<div class="media video-container" id="video10" style="display:none;"><div class="video-wrapper"><video autoplay="" muted="" onended=""><source src="/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/z_placeholder.mp4" type="video/mp4"/>Your browser does not support the video tag.</video></div></div>
+    <div class="container"><div id="video1" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/topslide.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+    <div id="video2" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/ops.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+    <div id="video3" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/accounts.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+    <div id="flourish4" class="media chart" style="display:none;"><div class="flourish-embed flourish-chart" data-src=""></div></div>
+    <div id="video5" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/record.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+    <div id="video6" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/flowchart.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
+    <div id="video7" class="media video-container" style="display:none;"><div class="video-wrapper"><video autoplay muted onended><source src="media/quote.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div>
 <div class="button-container">
 <button id="nextBtn" onclick="changeMedia(1)">→</button>
 <button id="backBtn" onclick="changeMedia(-1)">←</button>
@@ -566,16 +563,13 @@ canvas {
             let currentIndex = 0;
             const mediaElements = document.querySelectorAll('.media');
             const backgrounds = [
-                                 '',
-                                 '',
-                                 '/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/thirty1.png',
-                                 '/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/thirty3.png',
-                                 '/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/ten1.png',
-                                 '/Users/news/Desktop/Data Hub Segments/0519 Credit Rating/ten2.png',
-                                 '',
-                                 '',
-                                 '',
-                                 ''];
+                                     '',
+                                     '',
+                                     '',
+                                     'media/yearly.png',
+                                     '',
+                                     '',
+                                     ''];
                                  function showMedia(index) {
                                      mediaElements.forEach(el => el.style.display = 'none');
                                      if (mediaElements[index]) {
