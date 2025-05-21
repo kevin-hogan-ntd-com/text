@@ -574,6 +574,13 @@ canvas {
                                      mediaElements.forEach(el => el.style.display = 'none');
                                      if (mediaElements[index]) {
                                          mediaElements[index].style.display = 'block';
+
+                                         const video = mediaElements[index].querySelector('video');
+                                         if (video) {
+                                             video.pause();           // ensure it resets
+                                             video.currentTime = 0;   // jump to start
+                                             video.play();            // replay
+                                         }
                                      }
                                      document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
                                  }
